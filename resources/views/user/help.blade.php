@@ -13,7 +13,7 @@
 @section('content')
 
 <div class="content">
-    <a class="title">Help</a>
+    
         
         <div class="content2" style="text-align: center;" >
         <br>;
