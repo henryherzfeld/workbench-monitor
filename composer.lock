@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "d5bca48e56bbf3a25645858fcab9c285",
+    "content-hash": "00da059b818c1b260301e2960ad97dde",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2389,6 +2389,31 @@
                 "fixtures"
             ],
             "time": "2017-08-15T16:48:10+00:00"
+        },
+        {
+            "name": "gymadarasz/jquery.easing",
+            "version": "1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gymadarasz/jquery.easing.git",
+                "reference": "c92cda761181ef067714214714fced3e42849ff4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gymadarasz/jquery.easing/zipball/c92cda761181ef067714214714fced3e42849ff4",
+                "reference": "c92cda761181ef067714214714fced3e42849ff4",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "gymadarasz",
+                    "email": "gyula.madarasz@gmail.com"
+                }
+            ],
+            "description": "jQuery Easing plugin",
+            "time": "2016-01-03T16:08:03+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
