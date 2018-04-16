@@ -28,7 +28,7 @@ Route::get('/index.php', function() {
 Route::prefix('user')->group(function () {
 
     Route::get('/condition', function () {
-        return view('users/condition');
+        return view('user/condition');
         //User prefix "/user" prepends all above routes
         //
     })->name('condition');
