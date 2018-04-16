@@ -32,6 +32,13 @@ Route::prefix('user')->group(function () {
         //User prefix "/user" prepends all above routes
         //
     })->name('condition');
+    
+        Route::get('/workbench', function () {
+        return view('user/workbench');
+        //User prefix "/user" prepends all above routes
+        //
+    })->name('workbench');
+    
 });
 
 //
