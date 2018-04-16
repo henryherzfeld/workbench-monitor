@@ -1,0 +1,12 @@
+{
+    "name": "gymadarasz/jquery.easing",
+    "description": "jQuery Easing plugin",
+    "type": "library",
+    "authors": [
+        {
+            "name": "gymadarasz",
+            "email": "gyula.madarasz@gmail.com"
+        }
+    ],
+    "require": {}
+}
