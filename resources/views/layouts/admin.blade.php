@@ -26,10 +26,11 @@
                 <h1>@yield('title')</h1>
             </div>
         </div>
-    </div>
-</div>
 
 @yield('content')
+
+    </div>
+</div>
 
 @include('layouts.footer')
 
