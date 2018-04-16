@@ -18,7 +18,7 @@
 <!-- Core plugin JavaScript-->
 <script src="{{ asset('vendor/gymadarasz/jquery.easing.1.3.js') }}"></script>
 <!-- Page level plugin JavaScript-->
-<script src="{{ asset('assets/js/chart.js') }}"></script>
+<script src="{{ asset('assets/js/Chart.js') }}"></script>
 <script src="{{ asset('assets/js/jquery.dataTables.js') }}"></script>
 <script src="{{ asset('assets/js/dataTables.bootstrap4.js') }}"></script>
 <!-- Custom scripts for all pages-->
