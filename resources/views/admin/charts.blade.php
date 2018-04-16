@@ -1,4 +1,18 @@
- <div class="card mb-3">
+@extends('layouts.admin')
+
+<!--Define Page Title-->
+@section('title', 'Home')
+
+<!--Check Authentication-->
+@if (session('status'))
+  <div class="alert alert-success">
+    {{ session('status') }}
+  </div>
+@endif
+
+@section('content')
+
+<div class="card mb-3">
   <div class="card-header">
     <i class="fa fa-area-chart"></i> Area Chart Example</div>
   <div class="card-body">
@@ -29,4 +43,4 @@
       <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
     </div>
   </div>
-</div>
+  @endsection
