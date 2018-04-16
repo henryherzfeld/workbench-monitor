@@ -10,6 +10,8 @@
         </div>
       @endif
 
+@section('content')
+
 <div class="content">
     <a class="title">Check all equipment you are requesting to rent.</a>
         <br>;
