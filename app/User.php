@@ -37,8 +37,12 @@ class User extends Authenticatable
         else return true;
     }
 
-    public function register()
+    public function isAdmin()
     {
-
+        if ($this->get('password' == NULL))
+        {
+            return false;
+        }
+        else return true;
     }
 }

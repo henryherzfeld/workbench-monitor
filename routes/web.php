@@ -81,9 +81,9 @@ Route::prefix('admin')->group(function() {
     // TABLE ROUTES
     Route::prefix('tables')->group(function() {
 
-        Route::get('/', 'TableController@index')->name('tables')->middleware('auth');;
+        Route::get('/', 'TableController@index')->name('tables')->middleware('auth');
 
-        Route::get('users', 'TableController@users')->name('tables/users')->middleware('auth');;
+        Route::get('users', 'TableController@users')->name('tables/users')->middleware('auth');
 
         Route::get('workbenches', 'TableController@workbenches')->name('tables/workbenches')->middleware('auth');
     });
@@ -94,13 +94,13 @@ Route::prefix('admin')->group(function() {
         return view('admin.charts');
         //
         //
-    })->name('charts')->middleware('auth');;
+    })->name('charts')->middleware('auth');
 
     Route::get('/cards', function () {
         return view('cards');
         //
         //
-    })->name('cards')->middleware('auth');;
+    })->name('cards')->middleware('auth');
 });
 
 Auth::routes();
