@@ -9,6 +9,8 @@
           {{ session('status') }}
         </div>
       @endif
+      
+@section('content')
 
 <div class="content">
     <a class="title">User Agreement</a>
