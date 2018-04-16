@@ -33,11 +33,41 @@ Route::prefix('user')->group(function () {
         //
     })->name('condition');
     
-        Route::get('/workbench', function () {
-        return view('user/workbench');
+        Route::get('/agreement', function () {
+        return view('user/agreement');
         //User prefix "/user" prepends all above routes
         //
-    })->name('workbench');
+    })->name('agreement');
+    
+    Route::get('/extension', function () {
+        return view('user/extension');
+        //User prefix "/user" prepends all above routes
+        //
+    })->name('extension');
+    
+    Route::get('/help', function () {
+        return view('user/help');
+        //User prefix "/user" prepends all above routes
+        //
+    })->name('help');
+    
+    Route::get('/rent', function () {
+        return view('user/rent');
+        //User prefix "/user" prepends all above routes
+        //
+    })->name('rent');
+    
+    Route::get('/setup', function () {
+        return view('user/setup');
+        //User prefix "/user" prepends all above routes
+        //
+    })->name('setup');
+    
+    Route::get('/workticket', function () {
+        return view('user/workticket');
+        //User prefix "/user" prepends all above routes
+        //
+    })->name('workticket');
     
 });
 
