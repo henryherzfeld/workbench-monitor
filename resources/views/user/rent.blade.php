@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts/user/main')
 
       <!--Define Page Title-->
       @section('title', 'Perry Weinthal\'s Equipment Acess Control')

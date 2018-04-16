@@ -37,12 +37,14 @@ class User extends Authenticatable
         else return true;
     }
 
+
+    //User model returns if user is admin
+    protected $casts = [
+        'is_admin' => 'boolean',
+    ];
+
     public function isAdmin()
     {
-        if ($this->get('password' == NULL))
-        {
-            return false;
-        }
-        else return true;
+        return $this->admin;
     }
 }

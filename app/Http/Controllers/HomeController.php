@@ -19,8 +19,13 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function user()
     {
-        return view('home');
+        return view('user/home');
+    }
+
+    public function admin()
+    {
+        return view('admin/home');
     }
 }

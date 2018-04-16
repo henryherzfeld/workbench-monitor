@@ -11,7 +11,7 @@
     <i class="fa fa-angle-up"></i>
 </a>
 
-@include('layouts.logoutModal')
+@include('layouts/admin/logoutModal')
 
 <script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
 <script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>

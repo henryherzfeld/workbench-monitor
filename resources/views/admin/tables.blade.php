@@ -1,5 +1,5 @@
 
-@extends('layouts.admin')
+@extends('layouts/admin/main')
 
 <!--Define Page Title-->
 @section('title', 'Home')

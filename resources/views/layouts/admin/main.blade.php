@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-@include('layouts.head')
+@include('layouts/admin/head')
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
 
-@include('layouts.nav')
+@include('layouts/admin/nav')
 
 <!--Content Header-->
 <div class="content-wrapper">
@@ -14,7 +14,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{{ route('home') }}">Dashboard</a>
+                <a href="{{ route('admin/home') }}">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">
                 @yield('title')
@@ -32,7 +32,7 @@
     </div>
 </div>
 
-@include('layouts.footer')
+@include('layouts/admin/footer')
 
 </body>
 

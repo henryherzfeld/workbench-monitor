@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts/user/main')
 
       <!--Define Page Title-->
       @section('title', 'Equipment Access Control User Agreement')
