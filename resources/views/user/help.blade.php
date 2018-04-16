@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
       <!--Define Page Title-->
-      @section('title', 'Does your bench look like this?')
+      @section('title', 'Equipment Access Control Help')
 
       <!--Check Authentication-->
       @if (session('status'))
