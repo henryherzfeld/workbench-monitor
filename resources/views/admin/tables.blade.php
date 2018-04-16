@@ -22,21 +22,22 @@
 
       <!--checking between user page or workbench page-->
       @if ($title === "Users")
-        @foreach ($users as $user)
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Z#</th>
-            <th scope="col">Name</th>
-            <th scope="col">College</th>
-            <th scope="col">Department</th>
-            <th scope="col">Class</th>
-            <th scope="col">CRN</th>
-            <th scope="col">Class #</th>
-            <th scope="col">Class Name</th>
-            <th scope="col">Email</th>
-          </tr>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Z#</th>
+          <th scope="col">Name</th>
+          <th scope="col">College</th>
+          <th scope="col">Department</th>
+          <th scope="col">Class</th>
+          <th scope="col">CRN</th>
+          <th scope="col">Class #</th>
+          <th scope="col">Class Name</th>
+          <th scope="col">Email</th>
+        </tr>
       </thead>
       <tbody>
+        @foreach ($users as $user)
+
           <tr>
             <td>{{ $user->id }}</td>
             <td>{{ $user->z_number }}</td>
@@ -57,15 +58,15 @@
 
       <!-- If its not users, its a workbenches table we need-->
       @else
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Classroom</th>
+        <th scope="col">Type</th>
+        <th scope="col">College</th>
+      </tr>
+      </thead>
+      <tbody>
         @foreach ($workbenches as $workbench)
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Classroom</th>
-          <th scope="col">Type</th>
-          <th scope="col">College</th>
-        </tr>
-        </thead>
-        <tbody>
       <tr>
         <td>{{ $workbench->id }}</td>
         <td>{{ $workbench->classroom }}</td>
