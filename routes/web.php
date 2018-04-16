@@ -23,16 +23,16 @@ Route::get('/index.php', function() {
 })->name('index');
 
 
-////
-////USER VIEWS
-//Route::prefix('user')->group(function () {
 //
-//    Route::get('/workticket', function () {
-//        return view('workticket');
-//        //User prefix "/user" prepends all above routes
-//        //
-//    })->name('workticket');
-//});
+//USER VIEWS
+Route::prefix('user')->group(function () {
+
+    Route::get('/condition', function () {
+        return view('users/condition');
+        //User prefix "/user" prepends all above routes
+        //
+    })->name('condition');
+});
 
 //
 //ADMIN VIEWS
