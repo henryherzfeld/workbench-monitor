@@ -60,7 +60,7 @@
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-                <a class="nav-link" href="https://github.com/cen4010-spring18-team13/backend">
+                <a class="nav-link" href="https://github.com/cen4010-spring18-team13/backend/tree/refreshed">
                     <i class="fa fa-fw fa-link"></i>
                     <span class="nav-link-text">GitHub</span>
                 </a>
