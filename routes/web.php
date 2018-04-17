@@ -58,7 +58,7 @@ Route::middleware(['admin', 'auth'])->group(function() {
 
         Route::get('edit', function() {
             return view('admin/edit');
-        })->name('edit');
+        })->name('admin/edit');
     });
 });
 

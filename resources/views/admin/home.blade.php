@@ -1,7 +1,7 @@
     @extends('layouts/admin/main')
 
       <!--Define Page Title-->
-      @section('title', 'Home')
+      @section('title', 'Admin Dashboard')
 
       <!--Check Authentication-->
       @if (session('status'))
@@ -11,6 +11,8 @@
       @endif
 
     @section('content')
+      <p class="lead">Hello, {{ Auth::user()->name }}</p>
+
       <!-- Area Chart Example-->
       <div class="card mb-3">
         <div class="card-header">

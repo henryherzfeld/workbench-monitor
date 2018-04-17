@@ -49,7 +49,7 @@
                         <a href="">Monitoring</a>
                     </li>
                     <li>
-                        <a href="">Edit</a>
+                        <a href="{{route('admin/edit')}}">Edit</a>
                     </li>
                 </ul>
             </li>
