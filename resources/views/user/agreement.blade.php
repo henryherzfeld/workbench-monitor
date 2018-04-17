@@ -23,13 +23,13 @@
           <div class="form-group">
             <div class="form-check">
               <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" name="agreement" value="Agree"> By checking this box, you agree to the User Agreement
+                <input type="checkbox" class="form-check-input" name="agreement" value="Agree" required> By checking this box, you agree to the User Agreement
               </label>
             </div>
           </div>
           <div class="form-group">
             <button type="button" class="btn btn-secondary" onclick="javascript:history.back()">Back</button> 
-            <button type="submit" class="btn btn-primary" disabled>Agree</button>
+            <button type="submit" class="btn btn-primary btn-block">Agree</button>
           </div>
         </form>
       </div>
@@ -37,5 +37,4 @@
   </div>
   <div class="col-2"></div>
 </div>
-<script type='text/javascript'>$(".form-check-input").on("checked",function(){$("button:last").attr("disabled", "!($(this).checked())")});</script>
 @endsection
