@@ -13,11 +13,11 @@
 @section('content')
 
 <div class="row">
-  <div class="col-2"></div>
+  <div class="col-2" />
   <div class="col">
     <div class="card">
       <div class="card-header"><h3>User Agreement</h3></div>
-      <div class="card-body">Agreement text</div>
+      <div class="card-body"><textarea class="form-control">Agreement text</textarea></div>
       <div class="card-footer">
         <form action="{{ route('workticket') }}">
           <div class="form-group">
@@ -35,6 +35,6 @@
       </div>
     </div>
   </div>
-  <div class="col-2"></div>
+  <div class="col-2" />
 </div>
 @endsection
