@@ -55,6 +55,10 @@ Route::middleware(['admin', 'auth'])->group(function() {
             //
             //
         })->name('cards');
+
+        Route::get('edit', function() {
+            return view('admin/edit');
+        })->name('edit');
     });
 });
 
