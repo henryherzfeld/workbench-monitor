@@ -13,7 +13,7 @@
 @section('content')
 
 <div class="row">
-  <div class="col-2" />
+  <div class="col-2"></div>
   <div class="col">
     <div class="card">
       <div class="card-header"><h3>User Agreement</h3></div>
@@ -23,7 +23,7 @@
           <div class="form-group">
             <div class="form-check">
               <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" name="agreement" value="agree" onclick="javascript:$(\":checkbox\").attr(\"disabled\", \"!($(this).checked())\")"> By checking this box, you agree to the User Agreement
+                <input type="checkbox" class="form-check-input" name="agreement" value="Agree"> By checking this box, you agree to the User Agreement
               </label>
             </div>
           </div>
@@ -35,6 +35,7 @@
       </div>
     </div>
   </div>
-  <div class="col-2" />
+  <div class="col-2"></div>
 </div>
+<script type='text/javascript'>$(".form-check-input").on("checked",function(){$("button:last").attr("disabled", "!($(this).checked())")});</script>
 @endsection
