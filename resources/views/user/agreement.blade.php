@@ -23,13 +23,13 @@
           <div class="form-group">
             <div class="form-check">
               <label class="form-check-label">
-                <input type="checkbox" class="form-check-input" name="agreement" value="agree"> By checking this box, you agree to the User Agreement
+                <input type="checkbox" class="form-check-input" name="agreement" value="agree" onclick="javascript:$(\":checkbox\").attr(\"disabled\", \"!($(this).checked())\")"> By checking this box, you agree to the User Agreement
               </label>
             </div>
           </div>
           <div class="form-group">
-            <button type="button" class="btn btn-secondary" href="{{ route('rent') }}">Back</button> 
-            <button type="submit" class="btn btn-primary">Agree</button>
+            <button type="button" class="btn btn-secondary" onclick="javascript:history.back()">Back</button> 
+            <button type="submit" class="btn btn-primary" disabled>Agree</button>
           </div>
         </form>
       </div>
