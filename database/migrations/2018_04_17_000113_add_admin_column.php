@@ -14,7 +14,7 @@ class AddAdminColumn extends Migration
     public function up()
     {
         Schema::table('users', function($table) {
-            $table->boolean('admin');
+            $table->boolean('admin')->default(false);
         });
     }
 
