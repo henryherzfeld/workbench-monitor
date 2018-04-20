@@ -3,23 +3,13 @@
 <!--Define Page Title-->
 @section('title', 'Equipment Access Control User Agreement')
 
-<!--Check Authentication-->
-@if (session('status'))
-  <div class="alert alert-success">
-    {{ session('status') }}
-  </div>
-@endif
 
 @section('content')
 
-<div class="row">
-  <div class="col-2"></div>
-  <div class="col">
-    <div class="card">
-      <div class="card-header"><h3>User Agreement</h3></div>
-      <div class="card-body"><textarea class="form-control">Agreement text</textarea></div>
-      <div class="card-footer">
-        <form action="{{ route('workticket') }}">
+  @component('layouts/card')
+    @slot('icon')user @endslot
+    @slot('title') User Agreement @endslot
+        <form action="{{ route('user/workticket') }}">
           <div class="form-group">
             <div class="form-check">
               <label class="form-check-label">
@@ -27,14 +17,10 @@
               </label>
             </div>
           </div>
-          <div class="form-group">
-            <button type="button" class="btn btn-secondary" onclick="javascript:history.back()">Back</button> 
-            <button type="submit" class="btn btn-primary btn-block">Agree</button>
-          </div>
         </form>
-      </div>
     </div>
-  </div>
-  <div class="col-2"></div>
-</div>
+    @component('layouts/navigationButtons')
+      {{route('user/home')}}
+    @endcomponent
+    @endcomponent
 @endsection

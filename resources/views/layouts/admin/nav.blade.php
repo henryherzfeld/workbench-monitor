@@ -1,9 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="{{route('admin/home')}}">Workbench</a>
+    <a class="navbar-brand" href="{{route('admin/home')}}">Larabench</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
                 <a class="nav-link" href="{{route('admin/home')}}">
@@ -32,10 +32,10 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseMulti">
                     <li>
-                        <a href="{{route ('tables/users')}}">Users</a>
+                        <a href="{{route ('admin/tables/users')}}">Users</a>
                     </li>
                     <li>
-                        <a href="{{route ('tables/workbenches')}}">Workbenches</a>
+                        <a href="{{route ('admin/tables/workbenches')}}">Workbenches</a>
                     </li>
                 </ul>
             </li>
@@ -59,10 +59,10 @@
                     <span class="nav-link-text">Charts</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
-                <a class="nav-link" href="https://github.com/cen4010-spring18-team13/backend/tree/refreshed">
-                    <i class="fa fa-fw fa-link"></i>
-                    <span class="nav-link-text">GitHub</span>
+            <li class="nav-item bg-primary" data-toggle="tooltip" data-placement="right" title="Link">
+                <a class="nav-link text-white bg-primary" href="{{ route('user/home') }}">
+                    <i class="fa fa-fw fa-unlock-alt"></i>
+                    <span class="nav-link-text text-white">User</span>
                 </a>
             </li>
         </ul>
@@ -73,10 +73,11 @@
                 </a>
             </li>
         </ul>
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto mr-5">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-fw fa-bell"></i>
+                    <i class="fa fa-fw fa-bell mr-1"></i>
+                    {{ Auth::user()->name }}
                     <span class="d-lg-none">Alerts
               <span class="badge badge-pill badge-warning">6 New</span>
             </span>

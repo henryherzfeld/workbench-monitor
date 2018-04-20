@@ -1,36 +1,35 @@
 @extends('layouts/user/main')
 
-      <!--Define Page Title-->
-      @section('title', 'Does your bench look like this?')
+    <!--Define Page Title-->
+    @section('title', 'Condition')
 
-      <!--Check Authentication-->
-      @if (session('status'))
-        <div class="alert alert-success">
-          {{ session('status') }}
-        </div>
-      @endif
-
+    <!--Define Page Content -->
     @section('content')
 
-    <br>;
+        <!-- Progress Bar-->
+        @component('layouts/progressBar', ['width' => '50']) @endcomponent
 
-        <div class="content">
+        <!-- Card -->
+        @component('layouts/card')
+        @slot('icon')exclamation-triangle @endslot
 
+        <!-- Card Body -->
         <input type="radio" name="choice"
             <?php if (isset($choice) && $choice=="yes") echo "checked";?>
                value="yes">Yes
-            <br>;
-<input type="radio" name="choice"
-<?php if (isset($choice) && $choice=="no") echo "checked";?>
-value="no">No
-            <br>;
+            <br>
+
+        <input type="radio" name="choice"
+            <?php if (isset($choice) && $choice=="no") echo "checked";?>
+                value="no">No
+            <br>
   If you answered 'No', Please upload a photo(s) of the workbench, and any damaged equipment
 
         </div>
 
-        <div class="content">
-       <button type="submit">Next</button>
-        </div>
-
-
-    @endsection
+        <!-- Navigation Buttons -->
+        @component('layouts/navigationButtons')
+            {{ route('user/condition') }}
+        @endcomponent
+    @endcomponent
+@endsection

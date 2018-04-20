@@ -17,12 +17,14 @@
 Route::get('/', function() {
     return redirect ('admin');
 });
-
 Route::get('/index.php', function() {
     return redirect ('admin');
 })->name('index');
 
+//logout route for authentication controller
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+
+
 
 //
 //ADMIN VIEWS
@@ -35,17 +37,17 @@ Route::middleware(['admin', 'auth'])->group(function() {
         // TABLE ROUTES
         Route::prefix('tables')->group(function() {
 
-            Route::get('/', 'TableController@index')->name('tables');
+            Route::get('/', 'TableController@users')->name('admin/tables');
 
-            Route::get('users', 'TableController@users')->name('tables/users');
+            Route::get('users', 'TableController@users')->name('admin/tables/users');
 
-            Route::get('workbenches', 'TableController@workbenches')->name('tables/workbenches');
+            Route::get('workbenches', 'TableController@workbenches')->name('admin/tables/workbenches');
         });
 
 
         //CHART ROUTES
         Route::get('/charts', function () {
-            return view('admin.charts');
+            return view('admin/charts');
             //
             //
         })->name('charts');
@@ -76,43 +78,43 @@ Route::middleware(['auth'])->group(function() {
             return view('user/condition');
             //User prefix "/user" prepends all above routes
             //
-        })->name('condition');
+        })->name('user/condition');
 
             Route::get('/agreement', function () {
             return view('user/agreement');
             //User prefix "/user" prepends all above routes
             //
-        })->name('agreement');
+        })->name('user/agreement');
 
         Route::get('/extension', function () {
             return view('user/extension');
             //User prefix "/user" prepends all above routes
             //
-        })->name('extension');
+        })->name('user/extension');
 
         Route::get('/help', function () {
             return view('user/help');
             //User prefix "/user" prepends all above routes
             //
-        })->name('help');
+        })->name('user/help');
 
         Route::get('/rent', function () {
             return view('user/rent');
             //User prefix "/user" prepends all above routes
             //
-        })->name('rent');
+        })->name('user/rent');
 
         Route::get('/setup', function () {
             return view('user/setup');
             //User prefix "/user" prepends all above routes
             //
-        })->name('setup');
+        })->name('user/setup');
 
         Route::get('/workticket', function () {
             return view('user/workticket');
             //User prefix "/user" prepends all above routes
             //
-        })->name('workticket');
+        })->name('user/workticket');
 
     });
 });

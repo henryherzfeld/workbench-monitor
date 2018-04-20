@@ -1,28 +1,17 @@
-    @extends('layouts/admin/main')
+@extends('layouts/admin/main')
 
-      <!--Define Page Title-->
-      @section('title', 'Admin Dashboard')
+  <!--Define Page Title-->
+  @section('title', '')
 
-      <!--Check Authentication-->
-      @if (session('status'))
-        <div class="alert alert-success">
-          {{ session('status') }}
-        </div>
-      @endif
+  @section('content')
+    <p class="lead">Hello, {{ Auth::user()->name }}</p>
 
-    @section('content')
-      <p class="lead">Hello, {{ Auth::user()->name }}</p>
+    @component('layouts/card')
+        @slot('title') Workbench Activity @endslot
+        @slot('icon')area-chart @endslot
+        <canvas id="myAreaChart" width="100%" height="30"></canvas>
+    @endcomponent
 
-      <!-- Area Chart Example-->
-      <div class="card mb-3">
-        <div class="card-header">
-          <i class="fa fa-area-chart"></i>Workbench Activity</div>
-        <div class="card-body">
-          <canvas id="myAreaChart" width="100%" height="30"></canvas>
-        </div>
-        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
-      </div>
-      </div>
-    </div>
 
-    @endsection
+
+@endsection

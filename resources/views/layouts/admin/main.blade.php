@@ -7,6 +7,7 @@
 
 @include('layouts/admin/nav')
 
+
 <!--Content Header-->
 <div class="content-wrapper">
     <div class="container-fluid">
@@ -14,7 +15,7 @@
         <!-- Breadcrumbs-->
         <ol class="breadcrumb">
             <li class="breadcrumb-item">
-                <a href="{{ route('admin/home') }}">Dashboard</a>
+                <a href="{{ route('user/home') }}">Dashboard</a>
             </li>
             <li class="breadcrumb-item active">
                 @yield('title')
@@ -23,14 +24,21 @@
 
         <div class="row">
             <div class="col-12">
-                <h1 class="display-4">@yield('title')</h1>
+                <p class="h3 display-4 m-2">@yield('title')</p>
             </div>
         </div>
 
-@yield('content')
+        <!--Check Authentication-->
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
+            </div>
+        @endif
 
+        @yield('content')
     </div>
 </div>
+
 
 @include('layouts/admin/footer')
 

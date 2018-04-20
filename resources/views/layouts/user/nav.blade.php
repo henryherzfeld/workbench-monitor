@@ -1,12 +1,12 @@
-<nav class="navbar navbar-expand-lg navbar-primary bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="{{route('admin/home')}}">Workbench</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="mainNav">
+    <a class="navbar-brand" href="{{route('user/home')}}">Larabench</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-                <a class="nav-link" href="{{route('admin/home')}}">
+                <a class="nav-link" href="{{route('user/home')}}">
                     <i class="fa fa-fw fa-dashboard"></i>
                     <span class="nav-link-text">Dashboard</span>
                 </a>
@@ -14,28 +14,14 @@
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Logs">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseLogs" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-file"></i>
-                    <span class="nav-link-text">Logs</span>
+                    <span class="nav-link-text">Rent</span>
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseLogs">
                     <li>
-                        <a href="">Users</a>
+                        <a href="{{ route(('user/setup')) }}">New</a>
                     </li>
                     <li>
-                        <a href="">Workbenches</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-table"></i>
-                    <span class="nav-link-text">Tables</span>
-                </a>
-                <ul class="sidenav-second-level collapse" id="collapseMulti">
-                    <li>
-                        <a href="{{route ('tables/users')}}">Users</a>
-                    </li>
-                    <li>
-                        <a href="{{route ('tables/workbenches')}}">Workbenches</a>
+                        <a href="{{ route('user/extension') }}">Extend</a>
                     </li>
                 </ul>
             </li>
@@ -46,17 +32,17 @@
                 </a>
                 <ul class="sidenav-second-level collapse" id="collapseComponents">
                     <li>
-                        <a href="">Monitoring</a>
+                        <a href="">Profile</a>
                     </li>
                     <li>
-                        <a href="">Edit</a>
+                        <a href="">Classrooms</a>
                     </li>
                 </ul>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-                <a class="nav-link" href="{{ route('charts') }}">
-                    <i class="fa fa-fw fa-area-chart"></i>
-                    <span class="nav-link-text">Charts</span>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
+                <a class="nav-link" href="{{ route('user/help') }}">
+                    <i class="fa fa-fw fa-question"></i>
+                    <span class="nav-link-text">Help</span>
                 </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Link">
@@ -65,6 +51,14 @@
                     <span class="nav-link-text">GitHub</span>
                 </a>
             </li>
+            @if  (Auth::user()->isAdmin())
+                <li class="nav-item bg-primary" data-toggle="tooltip" data-placement="right" title="Link">
+                    <a class="nav-link text-white bg-primary" href="{{ route('admin/home') }}">
+                        <i class="fa fa-fw fa-unlock-alt"></i>
+                        <span class="nav-link-text text-white">Admin</span>
+                    </a>
+                </li>
+                @endif
         </ul>
         <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">
@@ -76,7 +70,8 @@
         <ul class="navbar-nav ml-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fa fa-fw fa-bell"></i>
+                    <i class="fa fa-fw fa-bell mr-1"></i>
+                    {{ Auth::user()->name }}
                     <span class="d-lg-none">Alerts
               <span class="badge badge-pill badge-warning">6 New</span>
             </span>
