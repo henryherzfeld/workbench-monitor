@@ -25,6 +25,3 @@
 <script src="{{ asset('assets/js/sb-admin.js') }}"></script>
 <script src="{{ asset('assets/js/sb-admin-datatables.min.js') }}"></script>
 <script src="{{ asset('assets/js/sb-admin-charts.min.js') }}"></script>
-
-
-</div>

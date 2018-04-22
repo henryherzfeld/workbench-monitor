@@ -1,20 +1,20 @@
 @extends('layouts/admin/main')
 
-<!--Define Page Title-->
-@section('title', 'Edit')
+    <!--Define Page Title-->
+    @section('title', 'Edit')
 
-<!--Check Authentication-->
-@if (session('status'))
-    <div class="alert alert-success">
-        {{ session('status') }}
-    </div>
-@endif
+    <!--Check Authentication-->
+    @if (session('status'))
+        <div class="alert alert-success">
+            {{ session('status') }}
+        </div>
+    @endif
 
 @section('content')
-        @component('layouts/card')
-        @slot('title')
-            Create Workbench
-        @endslot
+
+    @component('layouts/card')
+        @slot('icon')database @endslot
+        @slot('title') Create Workbench @endslot
             <form>
                 <div class="form-row">
                     <div class="form-group col-md-6">
@@ -47,10 +47,9 @@
         @endcomponent
 
 
-        @component('layouts/card')
-            @slot('title')
-                Modify Users Privileges
-            @endslot
+        @component('layouts/card', ['icon' => 'database'])
+            @slot('icon')unlock @endslot
+            @slot('title') Modify Users Privileges @endslot
             <form>
                 <div class="input-group col-md-6 mb-3">
                     <div class="input-group-prepend">
@@ -69,7 +68,7 @@
                 <button type="submit" class="btn btn-primary">Modify</button>
             </form>
         @endcomponent
-
     </div>
     </div>
-    @endsection
+    </div>
+@endsection

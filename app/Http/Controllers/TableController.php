@@ -12,7 +12,7 @@ class TableController extends Controller
 
     public function index()
     {
-        $title = "Index Page";
+        $title = "Index";
         $users = DB::table('users')->orderBy('id', 'asc')->paginate(50);
 
         return view('admin/tables', compact('users'), compact('title'));

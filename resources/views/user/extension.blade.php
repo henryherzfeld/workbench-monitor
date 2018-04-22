@@ -1,50 +1,47 @@
 @extends('layouts/user/main')
 
-      <!--Define Page Title-->
-      @section('title', 'Equipment Acess Control Setup')
+  <!--Define Page Title-->
+  @section('title', 'Extension')
 
-      <!--Check Authentication-->
-      @if (session('status'))
-        <div class="alert alert-success">
-          {{ session('status') }}
-        </div>
-      @endif
+    @section('content')
 
-@section('content')
+        @component('layouts/card')
+            @slot('title') Rental Length @endslot
+            @slot('icon')clock-o @endslot
 
-<div class="content">
-    <a class="title">Select Extension Time</a>
-        <br>;
-        
-        <div class="content">
+
         <form action="/Extend.php">
-            
-            <input type="radio" name="choice"
-            <?php if (isset($choice) && $choice=="15") echo "checked";?>
-               value="15">15 Minutes
-            <br>;
-            
-            <input type="radio" name="choice"
-            <?php if (isset($choice) && $choice=="30") echo "checked";?>
-               value="30">30 Minutes
-            <br>;
-            
-            <input type="radio" name="choice"
-            <?php if (isset($choice) && $choice=="60") echo "checked";?>
-               value="60">60 Minutes
-            <br>;
-            
-  
-</form>
-        </div>
-        
-        <div class="content">
-            <a href="Rent.php"><button type="submit">Back</button></a> 
-            
-            <a href="UserAgreement.php"><button type="submit">Next</button></a>
-        </div>
-        
-        
-   
-    </div>
+            <div class="form-check">
+                <input type="radio" class="form-check mb-1" name="choice" id="time1"
+               <?php if (isset($choice) && $choice=="15") echo "checked"?>
+                   value="15">
+                <label class="form-check-label" for="time1">
+                    15 Minutes
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input type="radio" class="form-check mb-1" name="choice" id="time2"
+                <?php if (isset($choice) && $choice=="30") echo "checked"?>
+                   value="30">
+                <label class="form-check-label" for="time2">
+                    30 Minutes
+                </label>
+            </div>
+
+            <div class="form-check">
+                <input type="radio" class="form-check mb-1" name="choice" id="time3"
+                <?php if (isset($choice) && $choice=="60") echo "checked"?>
+                   value="60">
+                <label class="form-check-label" for="time3">
+                    60 Minutes
+                </label>
+            </div>
+        </form>
+
+            </div>
+            @component('layouts/navigationButtons')
+                {{route('user/home')}}
+            @endcomponent
+        @endcomponent
 @endsection

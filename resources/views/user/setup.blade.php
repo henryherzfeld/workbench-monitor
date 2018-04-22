@@ -1,40 +1,41 @@
 @extends('layouts/user/main')
 
       <!--Define Page Title-->
-      @section('title', 'Equipment Acess Control Setup')
-
-      <!--Check Authentication-->
-      @if (session('status'))
-        <div class="alert alert-success">
-          {{ session('status') }}
-        </div>
-      @endif
+      @section('title', 'Equipment Setup')
 
 @section('content')
 
-<div class="content">
-    <a class="title">Check all equipment you are requesting to rent.</a>
-        <br>;
-        
-        <div class="content">
-        <form action="/EquipmentSelect.php">
-            <input type="checkbox" name="Equipment" value="Bench"> Workbench<br>
-            <input type="checkbox" name="Equipment" value="Iron"> Soldering Iron<br>
-            <input type="checkbox" name="Equipment" value="Other"> Other ( Seperate the Equipment with a comma.) <input type="text" placeholder="" name="other" required><br>
-            
- 
-</form>
+    @component('layouts/progressBar', ['width' => '15']) @endcomponent
+
+    @component('layouts/card')
+        @slot('title') Workbench Activity @endslot
+        @slot('icon')area-chart @endslot
+
+
+
+        <form>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                    Workbench
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                    Soldering Iron
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                    Other
+                </label>
+            </div>
+        </form>
         </div>
-        
-        <div class="content">
-            <a href="Rent.php"><button type="submit">Back</button></a>
-            
-            <a href="EquipmentCondition.php"><button type="submit">Next</button></a>
-        </div>
-        
-        <div style="position: absolute; bottom: 250; right: 0; width: 350px; text-align:center;">
-            <a href="Help.php"><button type="button" class="btn btn-info" title="Click Here for more information on the equipment and access requirements">Info</button></a></div>
-        
-   
-    </div>
+        @component('layouts/navigationButtons')
+            {{route('user/condition')}}
+        @endcomponent
+    @endcomponent
 @endsection
