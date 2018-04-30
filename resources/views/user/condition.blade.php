@@ -23,7 +23,7 @@
             <?php if (isset($choice) && $choice=="no") echo "checked";?>
                 value="no">No
             <br>
-  If you answered 'No', Please upload a photo(s) of the workbench, and any damaged equipment
+  If you answered 'No', Please upload a photo(s) of the workbench, and any damaged equipment {{ $request->input('workbench') }}
 
         </div>
 
