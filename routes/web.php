@@ -58,6 +58,12 @@ Route::middleware(['admin', 'auth'])->group(function() {
             //
         })->name('cards');
 
+        //SHOW ROUTES
+        Route::get('show/{type}/{id}', function() {
+            return view('admin/show', compact('type'));
+        })->name('admin/show');
+
+        //EDIT ROUTE
         Route::get('edit', function() {
             return view('admin/edit');
         })->name('admin/edit');

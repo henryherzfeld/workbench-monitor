@@ -36,13 +36,4 @@ class TableController extends Controller
         return view('admin/tables', compact('workbenches'), compact('title'));
 
     }
-
-    public function show()
-    {
-        $users = DB::table('users')->orderBy('id', 'asc')->paginate(50);
-
-        return view('admin/show', compact('users'));
-
-    }
-
 }
