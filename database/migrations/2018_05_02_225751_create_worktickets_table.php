@@ -15,6 +15,10 @@ class CreateWorkticketsTable extends Migration
     {
         Schema::create('worktickets', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('workbenchId')->default(0);
+            $table->date('start')->nullable();
+            $table->date('end')->nullable();
+            $table->integer('length')->nullable()->default(0);
             $table->timestamps();
         });
     }

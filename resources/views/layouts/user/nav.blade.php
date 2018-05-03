@@ -21,21 +21,7 @@
                         <a href="{{ route(('user/setup')) }}">New</a>
                     </li>
                     <li>
-                        <a href="{{ route('user/extension') }}">Extend</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-wrench"></i>
-                    <span class="nav-link-text">Tools</span>
-                </a>
-                <ul class="sidenav-second-level collapse" id="collapseComponents">
-                    <li>
-                        <a href="">Profile</a>
-                    </li>
-                    <li>
-                        <a href="">Classrooms</a>
+                        <a href="{{ route('user/ticket') }}">Extend</a>
                     </li>
                 </ul>
             </li>

@@ -28,7 +28,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name(
 
 //
 //ADMIN VIEWS
-Route::middleware(['admin', 'auth'])->group(function() {
+Route::middleware(['web', 'admin', 'auth'])->group(function() {
     Route::prefix('admin')->group(function() {
 
         //HOME ROUTE
@@ -73,9 +73,10 @@ Route::middleware(['admin', 'auth'])->group(function() {
 
 //
 //USER VIEWS
-Route::middleware(['auth'])->group(function() {
+Route::middleware(['web','auth'])->group(function() {
     Route::prefix('user')->group(function () {
 
+        Auth::routes();
 
         Route::get('/', 'HomeController@user')->name('user/home');
 
@@ -92,12 +93,6 @@ Route::middleware(['auth'])->group(function() {
             //
         })->name('user/agreement');
 
-        Route::get('/extension', function () {
-            return view('user/extension');
-            //User prefix "/user" prepends all above routes
-            //
-        })->name('user/extension');
-
         Route::get('/help', function () {
             return view('user/help');
             //User prefix "/user" prepends all above routes
@@ -110,22 +105,26 @@ Route::middleware(['auth'])->group(function() {
             //
         })->name('user/rent');
 
-        Route::get('/setup', function () {
-            return view('user/setup');
-            //User prefix "/user" prepends all above routes
-            //
-        })->name('user/setup');
+        Route::get('/setup', 'WorkticketController@new')->name('user/setup');
 
-        Route::get('/workticket', function () {
-            return view('user/workticket');
-            //User prefix "/user" prepends all above routes
-            //
-        })->name('user/workticket');
+        //
+        //USER CONTROLLER VIEWS (NO CLOSURE)
+        //
 
+        //Workticket Routes
+        Route::get('/ticket', 'WorkticketController@index')->name('user/ticket');
+
+        Route::get('/ticket/show/{id}', 'WorkticketController@show');
+
+        Route::get('/ticket/classroom/{id}', 'ClassroomController@show');
+
+        Route::get('/ticket/{id}', 'WorkticketController@store');
+
+        Route::get('/ticket/extend/{time}', 'WorkticketController@extendRental');
+
+        Route::get('/finalize', 'WorkticketController@finalize')->name('user/finalize');
     });
 });
 
 
-
-Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');

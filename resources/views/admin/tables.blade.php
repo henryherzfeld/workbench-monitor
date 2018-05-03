@@ -4,14 +4,6 @@
 <!--Define Page Title-->
 @section('title', $title)
 
-<!--Check Authentication-->
-@if (session('status'))
-  <div class="alert alert-success">
-    {{ session('status') }}
-  </div>
-@endif
-
-
 
 @section('content')
 

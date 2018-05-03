@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration
             $table->integer('class_crn');
             $table->string('class_number');
             $table->string('class_name');
+            $table->boolean('admin')->default(false);
+            $table->integer('ticketId')->default(-1);
             $table->string('email');
             $table->string('password');
             $table->rememberToken();
