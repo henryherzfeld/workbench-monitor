@@ -20,6 +20,6 @@ class Admin
         {
             return $next($request);
         }
-        return redirect('user')->with($user);
+        return redirect('user');
     }
 }
