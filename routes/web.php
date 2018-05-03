@@ -24,7 +24,7 @@ Route::get('/index.php', function() {
 //logout route for authentication controller
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
-
+Auth::routes();
 
 //
 //ADMIN VIEWS
@@ -75,8 +75,6 @@ Route::middleware(['web', 'admin', 'auth'])->group(function() {
 //USER VIEWS
 Route::middleware(['web','auth'])->group(function() {
     Route::prefix('user')->group(function () {
-
-        Auth::routes();
 
         Route::get('/', 'HomeController@user')->name('user/home');
 
