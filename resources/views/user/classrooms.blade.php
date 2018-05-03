@@ -17,8 +17,9 @@
                 @if($workbench->active)
                     <a href="#" class="list-group-item list-group-item-action list-group-item-danger">Bench #{{$workbench->id}} **In Use**</a>
 
-                @endif
+                @else
                 <a href="{{action('WorkticketController@store', ['id' => $workbench->id])}}"class="list-group-item list-group-item-action">Bench #{{$workbench->id}}</a>
+                @endif
             @endforeach
         </div>
 
