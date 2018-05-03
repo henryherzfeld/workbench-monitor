@@ -21,7 +21,7 @@
 <body class="bg-dark">
   <div class="container">
     <div class="card card-login mx-auto mt-5">
-      <div class="card-header">Admin Login</div>
+      <div class="card-header">LaraBench Login</div>
       <div class="card-body">
         <form class="form-horizontal" method="POST" action="{{ route('login') }}">
           {{ csrf_field() }}
