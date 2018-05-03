@@ -17,13 +17,12 @@
                 <a href=
                    @if($classroom->classRoom == 'EE400')
                    @if($engineer)
-                           "/user/ticket/classroom/{{$classroom->id}}" class="list-group-item list-group-item-action"
-                @else "#" class="list-group-item list-group-item-action list-group-item-danger"
+                           "/user/ticket/classroom/{{$classroom->id}}" class="list-group-item list-group-item-action"> {{$classroom->className}}</a>
+                @else "#" class="list-group-item list-group-item-action list-group-item-danger">{{$classroom->className}} </a>
                 @endif
                 @else
-                    "/user/ticket/classroom/{{$classroom->id}}" class="list-group-item list-group-item-action"
+                    "/user/ticket/classroom/{{$classroom->id}}" class="list-group-item list-group-item-action"> {{$classroom->className}}</a>
                 @endif
-                >{{$classroom->className}}</a>
             @endforeach
         </div>
 
