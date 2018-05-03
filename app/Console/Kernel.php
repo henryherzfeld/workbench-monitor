@@ -27,8 +27,18 @@ class Kernel extends ConsoleKernel
     {
         // $schedule->command('inspire')
         //          ->hourly();
+        $worktickets = DB::table('worktickets')->get();
 
-        DB::table('worktickets')->decrement('length');
+        DB::table('worktickets')->where('length', '>', '0')->decrement('length');
+
+
+        foreach($worktickets as $workticket) {
+            $workbench = \App\Workbench::find($workticket->workbenchId);
+            if ($workticket->length < 1 && $workbench->active) {
+            $workbench->active = 0;
+            $workbench->save();
+            }
+        }
     }
 
     /**
