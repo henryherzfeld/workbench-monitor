@@ -1,7 +1,7 @@
 @extends('layouts/user/main')
 
-      <!--Define Page Title-->
-      @section('title', 'New Ticket')
+<!--Define Page Title-->
+@section('title', 'New Ticket')
 
 @section('content')
 
@@ -15,13 +15,16 @@
 
             @foreach ($classrooms as $classroom)
                 <a href=
-                   @if($engineer && $classroom->classRoom == 'EE400')
+                   @if($classroom->classRoom == 'EE400')
+                   @if($engineer)
                            "/user/ticket/classroom/{{$classroom->id}}" class="list-group-item list-group-item-action"
-                   @elseif(!$engineer)
-                           "#" class="list-group-item list-group-item-action list-group-item-danger"
-                   @endif
+                @else "#" class="list-group-item list-group-item-action list-group-item-danger"
+                @endif
+                @else
+                    "/user/ticket/classroom/{{$classroom->id}}" class="list-group-item list-group-item-action"
+                @endif
                 >{{$classroom->className}}</a>
-                @endforeach
+            @endforeach
         </div>
 
     @endcomponent
