@@ -53,13 +53,23 @@ class WorkticketController extends Controller
 
     public function store($id){
 
-
         $ticket = new \App\Workticket;
         $ticket->workbenchId = $id;
-        Auth::user()->ticketId = $ticket->id;
         $ticket->length = 45;
         $ticket->start = now();
         $ticket->save();
+
+
+        $user = Auth::user();
+        $user->ticketId = $ticket->id;
+        $user->save();
+
+
+        $workbench = \App\Workbench::find($id);
+        $workbench->active = 1;
+        $workbench->save();
+
+
         return view('user/condition');
 
     }
