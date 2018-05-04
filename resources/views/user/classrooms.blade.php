@@ -18,7 +18,7 @@
                     <a href="#" class="list-group-item list-group-item-action list-group-item-danger">Bench #{{$workbench->id}} **In Use**</a>
 
                 @else
-                <a href="{{action('WorkticketController@store', ['id' => $workbench->id])}}"class="list-group-item list-group-item-action">Bench #{{$workbench->id}}</a>
+                <a href="{{action('WorkticketController@store', ['id' => $workbench->id])}}"class="list-group-item list-group-item-action">Bench #{{$workbench->id}} Type: {{$workbench->type}}</a>
                 @endif
             @endforeach
         </div>

@@ -25,6 +25,7 @@ class EditController extends Controller
     $user->name = $request->userName;
     $user->college = $request->college;
     $user->z_number = $request->zNumber;
+    $user->ticketId = $request->ticketId;
     if($request->admin === 'Yes'){
         $user->admin = 1;
     }

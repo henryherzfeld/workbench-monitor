@@ -75,6 +75,10 @@
                         <option @if($user->admin === 1) selected @endif>Yes</option>
                     </select>
                 </div>
+                <div class="form-group col-md-2">
+                    <label for="ticketId">Workticket ID</label>
+                    <input type="text" class="form-control" id="ticketId" name="ticketId" value="@isset($user->ticketId) {{$user->ticketId}} @endisset">
+                </div>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
