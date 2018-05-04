@@ -41,12 +41,15 @@ class WorkticketController extends Controller
 
         $classrooms = \App\Classroom::all();
 
-        if(Auth::user()->college === 'EG'){
-        return view('user/setup', compact('classrooms'), ['engineer' => true]);
+        if(Auth::user()->ticketId <= 0) {
+            if (Auth::user()->college === 'EG') {
+                return view('user/setup', compact('classrooms'), ['engineer' => true]);
+            } else {
+                return view('user/setup', compact('classrooms'), ['engineer' => false]);
+            }
         }
-
         else{
-            return view('user/setup', compact('classrooms'), ['engineer' => false]);
+            return redirect('user/ticket');
         }
 
     }
