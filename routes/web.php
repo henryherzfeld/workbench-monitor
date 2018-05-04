@@ -44,6 +44,13 @@ Route::middleware(['web', 'admin', 'auth'])->group(function() {
             Route::get('workbenches', 'TableController@workbenches')->name('admin/tables/workbenches');
         });
 
+        // EDIT ROUTES
+        Route::prefix('edit')->group(function() {
+            Route::get('/user/{id}', 'EditController@user');
+            Route::get('/workbench/{id}', 'EditController@workbench');
+            Route::post('/user', 'EditController@updateUser');
+            Route::post('/workbench', 'EditController@updateWorkbench');
+        });
 
         //CHART ROUTES
         Route::get('/charts', function () {

@@ -11,20 +11,6 @@
                     <span class="nav-link-text">Dashboard</span>
                 </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Logs">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseLogs" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-file"></i>
-                    <span class="nav-link-text">Logs</span>
-                </a>
-                <ul class="sidenav-second-level collapse" id="collapseLogs">
-                    <li>
-                        <a href="">Users</a>
-                    </li>
-                    <li>
-                        <a href="">Workbenches</a>
-                    </li>
-                </ul>
-            </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Menu Levels">
                 <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
                     <i class="fa fa-fw fa-table"></i>
@@ -36,20 +22,6 @@
                     </li>
                     <li>
                         <a href="{{route ('admin/tables/workbenches')}}">Workbenches</a>
-                    </li>
-                </ul>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
-                    <i class="fa fa-fw fa-wrench"></i>
-                    <span class="nav-link-text">Tools</span>
-                </a>
-                <ul class="sidenav-second-level collapse" id="collapseComponents">
-                    <li>
-                        <a href="">Monitoring</a>
-                    </li>
-                    <li>
-                        <a href="{{route('admin/edit')}}">Edit</a>
                     </li>
                 </ul>
             </li>
